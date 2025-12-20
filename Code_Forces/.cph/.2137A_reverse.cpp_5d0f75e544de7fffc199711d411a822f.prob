@@ -1,0 +1,1 @@
+{"name":"Local: 2137A_reverse","url":"e:\\EDUCATION\\CP playground\\Play-ground\\Code_Forces\\2137A_reverse.cpp","tests":[{"id":1766240022783,"input":"3\n1 4\n1 5\n5 4\n","output":"1\n10\n21\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\EDUCATION\\CP playground\\Play-ground\\Code_Forces\\2137A_reverse.cpp","group":"local","local":true}
