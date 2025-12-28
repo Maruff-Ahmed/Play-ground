@@ -1,0 +1,1 @@
+{"name":"Local: 1788_A","url":"e:\\EDUCATION\\CP playground\\Play-ground\\Code_Forces\\1788_A.cpp","tests":[{"id":1766936900459,"input":"3\n6\n2 2 1 2 1 2\n3\n1 2 1\n4\n1 1 1 1\n","output":"2\n-1\n1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\EDUCATION\\CP playground\\Play-ground\\Code_Forces\\1788_A.cpp","group":"local","local":true}
