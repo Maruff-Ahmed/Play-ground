@@ -3,38 +3,61 @@ using namespace std;
 
 void solve() {
     int n;
-    cin >> n;
-    string s;
-    cin>>s;
-   
-    long long sum=0;
+        cin >> n;
+        string s;
+        cin >> s;
+
+        
+        bool sort = true;
+        for (int i = 1; i < n; i++) {
+            if (s[i-1] > s[i]) {
+                sort = false;
+                break;
+            }
+        }
+
+        if (sort) {
+            cout << "Bob"<<endl;
+            return;
+        }
+
+       
+        cout << "Alice"<<endl;
+
+        
+        int p= -1;
+        bool zero = false;
+        for (int i = n - 1; i >= 0; i--) {
+            if (s[i] == '0') {
+                zero = true;
+            }
+            if (s[i] == '1' && zero) {
+                p = i;
+                break;
+            }
+        }
+
+        vector<int> result;
+
+        
+        for (int i = 0; i <=p ; i++) {
+            if (s[i] == '1') {
+                result.push_back(i + 1); 
+            }
+        }
+
     
-    vector<long long > result;
-    for(int i=0; i<n; i++){
-        if (s[i] == 'R') {
-            sum += (n - 1 - i);
-            long long extra = i - (n - 1 - i);
-            
-            result.push_back(extra);
-           
-        } else {
-            sum += i;
-            long long extra = (n - 1 - i) - i;
-            
-            result.push_back(extra); 
-          
+        for (int i = p + 1; i < n; i++) {
+            if (s[i] == '0') {
+                result.push_back(i + 1); 
+            }
         }
-    }
 
-    sort(result.begin(), result.end(), greater<int>());
-    for(int i=0; i<n; i++){
-        if(result[i]>0){
-            sum=sum+result[i];
+        cout << result.size() << endl;
+        for(int i=0;i<result.size();i++){
+            cout<<result[i]<<" ";
         }
-        cout<<sum<<" ";
-    }
-    cout<<endl;
-
+        cout<<endl;
 }
 
 int main() {
