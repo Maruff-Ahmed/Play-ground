@@ -2,12 +2,33 @@
 using namespace std;
 
 void solve() {
-        int n;
+       int n;
         cin >> n;
-        for (int i = 1; i <= n; i++) {
-            cout << i << " ";
+        vector<int> v(n);
+        for (int i = 0; i < n; i++) {
+            cin >> v[i];
         }
-        cout << endl;
+
+        int f = -1;
+        for (int i = 0; i < n; i++) {
+            if (v[i] == n) {
+
+                f= i;
+                break;
+            }
+        }
+
+        if (f != 0) {
+           
+            reverse(v.begin(), v.begin() + f + 1);
+        } 
+        
+        
+        for(int i=0; i<n; i++){
+            cout<<v[i]<<" ";
+        }
+        cout<<endl;
+           
 
 }
 
