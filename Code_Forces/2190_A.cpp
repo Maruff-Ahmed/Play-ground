@@ -14,34 +14,24 @@ void solve() {
         cout << "Bob"<<endl;
         return;
     }
-
+    vector<int>move;
     cout<<"Alice"<<endl;
 
-    int p=-1;
+   
     for (int i = 0; i < n; i++) {
-        if (s[i] == '1') {
-            p = i;
-            break;
+        if (s[i] != t[i]) {
+
+            move.push_back(i);
+            
         }
     }
 
-        
-    int q = -1;
-    for (int i = n - 1; i >=0; i--) {
-        if (s[i] == '0') {
-            q= i;
-            break;
-        }
+    cout<<move.size()<<endl;
+
+    for(int i=0; i<move.size();i++){
+        cout<<move[i]+1<<" ";
     }
-
-       
-    int m = q - p + 1;
-    cout << m << endl;
-
-
-    for (int i = p; i <= q; i++) {
-        cout << i + 1 << " ";
-    }
+    
     cout <<endl;
     
 }
