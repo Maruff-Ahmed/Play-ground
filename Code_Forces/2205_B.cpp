@@ -1,24 +1,45 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void solve() {
-    long long n;
-    cin >> n;
-    vector<int>v(n);
-    for(int i =0; i<n; i++){
-        cin>>v[i];
-
+vector<long long> divi(long long x, long long k) {
+    vector<long long > v;
+    while (true) {
+        v.push_back(x);
+        if (x == 0) break;
+        if (x / k == x) break;
+        x /= k;
     }
-    long long x=*max_element(v.begin(),v.end());
-    int result=0;
-    for(int i =0; i<n; i++){
-        if(v[i]==x){
-            result++;
+    return v;
+}
+
+void solve() {
+    long long a, b, x;
+        cin >> a >> b >> x;
+
+        if (a == b) {
+            cout << 0 << endl;
+            return;
         }
 
-    }
-    cout<<result<<endl;
+        vector<long long> p = divi(a, x);
+        vector<long long> q = divi(b, x);
 
+        long long ans = LLONG_MAX;
+
+        for (int i = 0; i < (int)p.size(); i++) {
+            for (int j = 0; j < (int)q.size(); j++) {
+                long long  x = p[i];
+                long long y = q[j];
+
+                long long op = i + j + abs(x - y);
+                ans = min(ans, op);
+            }
+        }
+
+        cout << ans << endl;
+    
+
+   
     
 }
 
