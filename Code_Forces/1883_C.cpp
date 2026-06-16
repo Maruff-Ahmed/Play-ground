@@ -13,8 +13,6 @@ void solve() {
         } 
     }
 
-
-
     int ans = INT_MAX;
 
     for (int i = 0; i < n; i++) {
@@ -26,7 +24,6 @@ void solve() {
         int ops = (k - (v[i] % k));
         ans = min(ans, ops);
     }
-
     if(k!=4){
         cout<<ans<<endl;
     }
@@ -53,7 +50,6 @@ void solve() {
         }
        
     }
-    
 }
 
 int main() {
